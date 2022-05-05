@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:scaleType="fitXY"
+        android:id="@+id/imageviewbackgroundquangcao"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        >
+    </ImageView>
+    <View
+        android:background="@drawable/custom_background_quangcao"
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+    </View>
+    
+    <RelativeLayout
+        android:id="@+id/relative1"
+        android:layout_alignBottom="@+id/imageviewbackgroundquangcao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/imageviewquangcao"
+            android:padding="2dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp">
+
+        </ImageView>
+        <TextView
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:text="Anh yeu em"
+            android:textSize="17sp"
+            android:id="@+id/textviewtitlequangcaobaihat"
+            android:layout_toRightOf="@+id/imageviewquangcao"
+            android:layout_alignTop="@id/imageviewquangcao"
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </TextView>
+        <RelativeLayout
+            android:gravity="center"
+            android:layout_toRightOf="@id/imageviewquangcao"
+            android:layout_below="@id/textviewtitlequangcaobaihat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp">
+            <TextView
+                android:id="@+id/textviewnoidung"
+                android:text="Chao mung ban den voi ca khuc moi cua Ha Anh Tuan"
+                android:maxLines="2"
+                android:layout_marginRight="40dp"
+                android:textSize="13sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            </TextView>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>
