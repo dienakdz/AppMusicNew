@@ -1,6 +1,7 @@
 package com.example.appmusicnew.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v4.view.PagerAdapter;
 import android.view.LayoutInflater;
@@ -9,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.appmusicnew.Activity.DanhsachbaihatActivity;
 import com.example.appmusicnew.Model.Quangcao;
 import com.example.appmusicnew.R;
 import com.squareup.picasso.Picasso;
@@ -40,7 +42,7 @@ public class QuangcaoAdapter extends PagerAdapter {
     @NonNull
     @org.jetbrains.annotations.NotNull
     @Override
-    public Object instantiateItem(@NonNull @org.jetbrains.annotations.NotNull ViewGroup container, int position) {
+    public Object instantiateItem(@NonNull @org.jetbrains.annotations.NotNull ViewGroup container, final int position) {
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.dongquangcao, null);
         ImageView imgbackgroundquangcao = view.findViewById(R.id.imageviewbackgroundquangcao);
@@ -55,6 +57,14 @@ public class QuangcaoAdapter extends PagerAdapter {
         txttitlebaihatquangcao.setText(arrayListQuangcao.get(position).getTenBaiHat());
         txtnoidung.setText(arrayListQuangcao.get(position).getNoiDung());
 
+
+        view.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                Intent intent = new Intent(context, DanhsachbaihatActivity.class);
+                intent.putExtra("quangcao", arrayListQuangcao.get(position));
+                context.startActivity(intent);
+            }
+        });
 
 
         container.addView(view);

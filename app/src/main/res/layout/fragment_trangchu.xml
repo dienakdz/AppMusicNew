@@ -23,6 +23,27 @@
             android:layout_height="wrap_content">
 
         </fragment>
+        <fragment
+            android:name="com.example.appmusicnew.Fragment.Fragment_ChuDe_TheLoai_ToDay"
+            android:id="@+id/fragment_chudetheloai"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </fragment>
+        <fragment
+            android:name="com.example.appmusicnew.Fragment.Fragment_Album"
+            android:id="@+id/fragment_album"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </fragment>
+        <fragment
+            android:name="com.example.appmusicnew.Fragment.Fragment_BaiHatHot"
+            android:id="@+id/fragment_baihathot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </fragment>
     </LinearLayout>
 
 
