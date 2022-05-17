@@ -1,5 +1,6 @@
 package com.example.appmusicnew.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -13,6 +14,8 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.appmusicnew.Activity.DanhsachalbumActivity;
+import com.example.appmusicnew.Activity.DanhsachcactheloaiActivity;
 import com.example.appmusicnew.Adapter.AlbumAdapter;
 import com.example.appmusicnew.Model.Album;
 import com.example.appmusicnew.R;
@@ -44,6 +47,13 @@ public class Fragment_Album extends Fragment {
         txtxemthemalbum = view.findViewById(R.id.textviewxemthemalbum);
 
         GetData();
+        txtxemthemalbum.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), DanhsachalbumActivity.class);
+                startActivity(intent);
+            }
+        });
         return  view;
 
     }

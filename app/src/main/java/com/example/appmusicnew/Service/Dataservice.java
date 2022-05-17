@@ -5,6 +5,7 @@ import com.example.appmusicnew.Model.Baihat;
 import com.example.appmusicnew.Model.ChuDeTheLoai;
 import com.example.appmusicnew.Model.Playlist;
 import com.example.appmusicnew.Model.Quangcao;
+import com.example.appmusicnew.Model.TheLoai;
 
 
 import java.util.List;
@@ -36,5 +37,29 @@ public interface Dataservice {
     @POST("danhsachbaihat.php")
     Call<List<Baihat>> GetDanhsachbaihattheoquangcao(@Field("idQuangCao") String idQuangCao);
 
+    @FormUrlEncoded
+    @POST("danhsachbaihat.php")
+    Call<List<Baihat>> GetDanhsachbaohattheoplaylist(@Field("idPlayList") String idPlayList);
+
+    @FormUrlEncoded
+    @POST("danhsachbaihat.php")
+    Call<List<Baihat>> GetDanhsachbaohattheotheloai(@Field("idTheLoai") String idTheLoai);
+
+    @FormUrlEncoded
+    @POST("danhsachbaihat.php")
+    Call<List<Baihat>> GetDanhsachbaohattheoalbum(@Field("idAlbum") String idAlbum);
+
+    @FormUrlEncoded
+    @POST("updateluotthich.php")
+    Call<String> UpdateLuotthich (@Field("luotThich") String luotThich, @Field("idBaiHat") String idBaiHat);
+
+    @GET("danhsachcacplaylist.php")
+    Call<List<Playlist>> GetDanhsachcacPlaylist();
+
+    @GET("danhsachcactheloai.php")
+    Call<List<TheLoai>> GetDanhsachcacTheloai();
+
+    @GET("danhsachcacalbum.php")
+    Call<List<Album>> GetDanhsachcacAlbum();
 
 }

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:elevation="5dp">
+    <RelativeLayout
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_margin="15dp"
+            android:textSize="20sp"
+            android:text="1"
+            android:id="@+id/textviewdanhsachindex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </TextView>
+        <TextView
+            android:id="@+id/textviewtenbaihat"
+            android:text="Ten bai hat"
+            android:textSize="20sp"
+            android:singleLine="true"
+            android:textColor="#030303"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="250dp"
+            android:ellipsize="end"
+            android:layout_toRightOf="@+id/textviewdanhsachindex">
+
+        </TextView>
+        <TextView
+            android:textColor="#979797"
+            android:textSize="20sp"
+            android:text="Ca si"
+            android:singleLine="true"
+            android:layout_toRightOf="@+id/textviewdanhsachindex"
+            android:layout_below="@+id/textviewtenbaihat"
+            android:id="@+id/textviewtencasi"
+            android:ellipsize="end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </TextView>
+        <ImageView
+            android:src="@drawable/iconlove"
+            android:layout_marginRight="5dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:id="@+id/imageviewluotthichdanhsachbaihat"
+            android:layout_width="30dp"
+            android:layout_height="30dp">
+
+        </ImageView>
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

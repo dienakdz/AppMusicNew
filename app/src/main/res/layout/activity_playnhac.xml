@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:weightSum="10"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/custom_background_playnhac"
+    tools:context=".Activity.PlaynhacActivity">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbarplaynhac"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+    </android.support.v7.widget.Toolbar>
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpagerplaynhac"
+        android:layout_weight="8"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+    </android.support.v4.view.ViewPager>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:weightSum="10"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:text="00:00"
+                android:layout_weight="0.5"
+                android:id="@+id/textviewthoigianbaihat"
+                android:textColor="#ffff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            </TextView>
+            <SeekBar
+                android:id="@+id/seekbarbaihat"
+                android:layout_weight="9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            </SeekBar>
+            <TextView
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:text="00:00"
+                android:gravity="center"
+                android:layout_weight="0.5"
+                android:id="@+id/textviewtongthoigiangbaihat"
+                android:textColor="#ffff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                
+            </TextView>
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageButton
+                android:src="@drawable/iconsuffle"
+                android:layout_marginRight="15dp"
+                android:id="@+id/imagebuttonsuffle"
+                android:background="@null"
+                android:scaleType="fitXY"
+                android:layout_width="50dp"
+                android:layout_height="50dp">
+
+            </ImageButton>
+            <ImageButton
+                android:src="@drawable/iconpreview"
+                android:layout_marginRight="15dp"
+                android:id="@+id/imagebuttonpreview"
+                android:background="@null"
+                android:scaleType="fitXY"
+                android:layout_width="60dp"
+                android:layout_height="60dp">
+
+            </ImageButton>
+            <ImageButton
+                android:src="@drawable/iconplay"
+                android:layout_marginRight="15dp"
+                android:id="@+id/imagebuttonplay"
+                android:background="@null"
+                android:scaleType="fitXY"
+                android:layout_width="70dp"
+                android:layout_height="70dp">
+
+            </ImageButton>
+            <ImageButton
+                android:src="@drawable/iconnext"
+                android:layout_marginRight="15dp"
+                android:id="@+id/imagebuttonnext"
+                android:background="@null"
+                android:scaleType="fitXY"
+                android:layout_width="60dp"
+                android:layout_height="60dp">
+
+            </ImageButton>
+            <ImageButton
+                android:src="@drawable/iconrepeat"
+                android:layout_marginRight="15dp"
+                android:id="@+id/imagebuttonrepeat"
+                android:background="@null"
+                android:scaleType="fitXY"
+                android:layout_width="50dp"
+                android:layout_height="50dp">
+
+            </ImageButton>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

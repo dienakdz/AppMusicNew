@@ -1,5 +1,6 @@
 package com.example.appmusicnew.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -14,6 +15,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.appmusicnew.Activity.DanhsachbaihatActivity;
+import com.example.appmusicnew.Activity.DanhsachcacplaylistActivity;
+import com.example.appmusicnew.Activity.DanhsachcactheloaiActivity;
 import com.example.appmusicnew.Model.ChuDe;
 import com.example.appmusicnew.Model.ChuDeTheLoai;
 import com.example.appmusicnew.Model.TheLoai;
@@ -44,6 +48,13 @@ public class Fragment_ChuDe_TheLoai_ToDay extends Fragment {
         txtxemthemchudetheloai = view.findViewById(R.id.textviewxemthem);
 
         GetData();
+        txtxemthemchudetheloai.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), DanhsachcactheloaiActivity.class);
+                startActivity(intent);
+            }
+        });
         return view;
     }
 
@@ -92,6 +103,15 @@ public class Fragment_ChuDe_TheLoai_ToDay extends Fragment {
                     cardView.setLayoutParams(layout);
                     cardView.addView(imageView);
                     linearLayout.addView(cardView);
+                    final int finalJ= j;
+                    imageView.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Intent intent = new Intent(getActivity(), DanhsachbaihatActivity.class);
+                            intent.putExtra("idtheloai", theLoaiArrayList.get(finalJ));
+                            startActivity(intent);
+                        }
+                    });
                 }
                 horizontalScrollView.addView(linearLayout);
 
