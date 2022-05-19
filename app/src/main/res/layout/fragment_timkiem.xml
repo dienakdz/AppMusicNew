@@ -1,7 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#1F318E">
+    android:layout_height="match_parent">
+    <android.support.design.widget.AppBarLayout
+        android:background="#2196F3"
+        android:id="@+id/appbarlayouttimkiembaihat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbartimkiembaihat"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
 
-</android.support.constraint.ConstraintLayout>
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+    <android.support.v7.widget.RecyclerView
+        android:layout_below="@id/appbarlayouttimkiembaihat"
+        android:id="@+id/recyclerviewtimkiembaihat"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.support.v7.widget.RecyclerView>
+    <TextView
+        android:visibility="gone"
+        android:textColor="#f20"
+        android:gravity="center"
+        android:text="Không có dữ liệu bài hát"
+        android:id="@+id/textviewkhongcodulieu"
+        android:textSize="35sp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </TextView>
+</RelativeLayout>

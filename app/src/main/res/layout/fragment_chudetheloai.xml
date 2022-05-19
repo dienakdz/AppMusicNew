@@ -12,7 +12,7 @@
             android:textColor="#000000"
             android:textStyle="bold"
             android:textSize="20sp"
-            android:text="CHỦ ĐỀ VÀ THẾ LOẠI"
+            android:text="CHỦ ĐỀ VÀ THỂ LOẠI"
             android:id="@+id/textviewtile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">

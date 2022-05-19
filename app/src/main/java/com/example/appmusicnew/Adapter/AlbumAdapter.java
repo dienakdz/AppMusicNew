@@ -70,7 +70,6 @@ public class AlbumAdapter extends RecyclerView.Adapter< AlbumAdapter.ViewHolder>
                     intent.putExtra("album", mangalbum.get(getPosition()));
 
                     context.startActivity(intent);
-                    System.out.println("Click");
                 }
             });
         }

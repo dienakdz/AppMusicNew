@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setAdapter(mainViewPagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
         tabLayout.getTabAt(0).setIcon(R.drawable.icontrangchu);
-        tabLayout.getTabAt(1).setIcon(R.drawable.icontimkiem);
+        tabLayout.getTabAt(1).setIcon(R.drawable.iconsearch);
 
     }
 
