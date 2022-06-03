@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/chinhsua"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+
+        android:gravity="center"
+        android:text="Chỉnh sửa thông tin"
+        android:textColor="#9114A6"
+        android:textSize="36sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/edittextchinhsuaten"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:padding="10dp"
+        android:ems="10"
+        android:hint="Tên người dùng"
+        android:inputType="textPersonName"
+        android:textSize="20sp"
+        android:layout_margin="5dp"
+        />
+
+    <EditText
+        android:id="@+id/edittextchinhsuataikhoan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:padding="10dp"
+        android:ems="10"
+        android:hint="Tài khoản"
+        android:inputType="textPersonName"
+        android:textSize="20sp"
+        android:layout_margin="5dp"/>
+
+    <EditText
+        android:id="@+id/edittextchinhsuamatkhau"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:padding="10dp"
+        android:ems="10"
+        android:hint="Mật khẩu"
+        android:inputType="textPassword"
+        android:textSize="20sp"
+        android:layout_margin="5dp"/>
+
+    <Button
+        android:id="@+id/btnchinhsua"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#9C27B0"
+        android:text="   Chỉnh Sửa   "
+        android:gravity="center"
+        android:textColor="#FFFFFF"/>
+
+</LinearLayout>

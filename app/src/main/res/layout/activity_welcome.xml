@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:scaleType="fitXY"
+            android:layout_margin="3dp"
+            android:id="@+id/imageviewnguoidungdn"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/iconuserdn">
+
+        </ImageView>
+        <TextView
+            android:text="TEN NGUOI DUNG"
+            android:textSize="18sp"
+            android:textColor="#363636"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:layout_toRightOf="@+id/imageviewnguoidungdn"
+            android:layout_marginTop="7dp"
+            android:layout_marginLeft="5dp"
+            android:id="@+id/textviewtennguoidung"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </TextView>
+        <TextView
+            android:textColor="#8c8a8a"
+            android:textSize="18sp"
+            android:text="Ten taikhoan"
+            android:singleLine="true"
+            android:layout_toRightOf="@id/imageviewnguoidungdn"
+            android:layout_marginTop="7dp"
+            android:layout_marginLeft="5dp"
+            android:layout_below="@id/textviewtennguoidung"
+            android:id="@+id/textviewtknguoidung"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </TextView>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btnhome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:text="Trang Chủ" />
+        <Button
+            android:id="@+id/btnedit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:text="CHỈNH SỬA" />
+
+        <Button
+            android:id="@+id/btndx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:text="ĐĂNG XUẤT" />
+
+
+
+
+
+    </LinearLayout>
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/welViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <fragment
+            android:name="com.example.appmusicnew.Fragment.Fragment_MyPlayList"
+            android:id="@+id/fragment_myplaylist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </fragment>
+        <fragment
+            android:id="@+id/fragment_chinhsua"
+            android:name="com.example.appmusicnew.Fragment.Fragment_Chinhsua"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </fragment>
+    </android.support.v4.view.ViewPager>
+
+</LinearLayout>

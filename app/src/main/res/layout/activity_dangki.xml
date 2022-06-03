@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.DangkiActivity"
+    android:background="@color/colorAccent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/dangki"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+
+        android:gravity="center"
+        android:text="Đăng Ký"
+        android:textColor="#9114A6"
+        android:textSize="56sp"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/edittextdangkiten"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:padding="10dp"
+        android:ems="10"
+        android:hint="Tên người dùng"
+        android:inputType="textPersonName"
+        android:textSize="20sp"
+        android:layout_margin="5dp"
+        />
+
+    <EditText
+        android:id="@+id/edittextdangkitaikhoan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:padding="10dp"
+        android:ems="10"
+        android:hint="Tài khoản"
+        android:inputType="textPersonName"
+        android:textSize="20sp"
+        android:layout_margin="5dp"/>
+
+    <EditText
+        android:id="@+id/edittextdangkimatkhau"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:padding="10dp"
+        android:ems="10"
+        android:hint="Mật khẩu"
+        android:inputType="textPassword"
+        android:textSize="20sp"
+        android:layout_margin="5dp"/>
+
+    <Button
+        android:id="@+id/btndangki"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#9C27B0"
+        android:text="   Đăng Ký   "
+        android:textColor="#FFFFFF"/>
+    <TextView
+        android:layout_margin="10dp"
+        android:id="@+id/textviewdangnhap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Đã có tài khoản? Đăng nhập"
+        android:textSize="20sp"/>
+
+</LinearLayout>

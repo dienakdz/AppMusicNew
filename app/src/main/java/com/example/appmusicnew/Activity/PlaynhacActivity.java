@@ -24,6 +24,7 @@ import com.example.appmusicnew.Adapter.ViewPagerPlaylistnhac;
 import com.example.appmusicnew.Fragment.Fragment_Dianhac;
 import com.example.appmusicnew.Fragment.Fragment_PlayDanhsachbaihat;
 import com.example.appmusicnew.Model.Baihat;
+import com.example.appmusicnew.Model.Myplay;
 import com.example.appmusicnew.R;
 
 import java.io.IOException;
@@ -109,7 +110,7 @@ public class PlaynhacActivity extends AppCompatActivity {
                 if (checkrandom == false){
                     if (repeat == true){
                         repeat = false;
-                        imgrandom.setImageResource(R.drawable.iconsuffle);
+                        imgrandom.setImageResource(R.drawable.iconshuffled);
                         imgrepeat.setImageResource(R.drawable.iconrepeat);
                     }
                     imgrepeat.setImageResource(R.drawable.iconsyned);
@@ -243,6 +244,11 @@ public class PlaynhacActivity extends AppCompatActivity {
                 Baihat baihat = intent.getParcelableExtra("baihat");
                 mangbaihat.add(baihat);
             }
+//            if (intent.hasExtra("mybaihat")){
+//                Myplay myplay = intent.getParcelableExtra("mybaihat");
+//
+//                mangbaihat.add(myplay);
+//            }
             if (intent.hasExtra("cacbaihat")){
                 ArrayList<Baihat> baihatArrayList = intent.getParcelableArrayListExtra("cacbaihat");
                 mangbaihat = baihatArrayList;

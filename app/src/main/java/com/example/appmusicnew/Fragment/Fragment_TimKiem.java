@@ -23,6 +23,7 @@ import com.example.appmusicnew.Model.Baihat;
 import com.example.appmusicnew.R;
 import com.example.appmusicnew.Service.APIService;
 import com.example.appmusicnew.Service.Dataservice;
+import com.example.appmusicnew.Service.PreferenceHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,22 +33,32 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class Fragment_TimKiem extends Fragment {
-    View view;
+    View viewtk;
     Toolbar toolbar;
     RecyclerView recyclerViewtimkiembaihat;
     TextView txtkhongcodulieu;
     TimkiembaihatAdapter timkiembaihatAdapter;
+    private PreferenceHelper preferenceHelper;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_timkiem,container,false);
-        toolbar = view.findViewById(R.id.toolbartimkiembaihat);
-        recyclerViewtimkiembaihat = view.findViewById(R.id.recyclerviewtimkiembaihat);
-        txtkhongcodulieu = view.findViewById(R.id.textviewkhongcodulieu);
-        ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
-        toolbar.setTitle("");
-        setHasOptionsMenu(true);
-        return view;
+        viewtk = inflater.inflate(R.layout.fragment_timkiem,container,false);
+        preferenceHelper = new PreferenceHelper(viewtk.getContext());
+        if (preferenceHelper.getIsLogin()){
+
+
+
+        }else {
+            toolbar = viewtk.findViewById(R.id.toolbartimkiembaihat);
+            recyclerViewtimkiembaihat = viewtk.findViewById(R.id.recyclerviewtimkiembaihat);
+            txtkhongcodulieu = viewtk.findViewById(R.id.textviewkhongcodulieu);
+            ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
+            toolbar.setTitle("");
+            setHasOptionsMenu(true);
+
+        }
+
+        return viewtk;
     }
 
     @Override

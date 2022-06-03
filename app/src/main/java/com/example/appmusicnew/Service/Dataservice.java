@@ -3,6 +3,7 @@ package com.example.appmusicnew.Service;
 import com.example.appmusicnew.Model.Album;
 import com.example.appmusicnew.Model.Baihat;
 import com.example.appmusicnew.Model.ChuDeTheLoai;
+import com.example.appmusicnew.Model.Myplay;
 import com.example.appmusicnew.Model.Playlist;
 import com.example.appmusicnew.Model.Quangcao;
 import com.example.appmusicnew.Model.TheLoai;
@@ -51,7 +52,12 @@ public interface Dataservice {
 
     @FormUrlEncoded
     @POST("updateluotthich.php")
+    Call<String> AddMyPlayList (@Field("luotThich") String luotThich, @Field("idBaiHat") String idBaiHat, @Field("userluotthich") String userluotthich);
+
+    @FormUrlEncoded
+    @POST("updateluotthich.php")
     Call<String> UpdateLuotthich (@Field("luotThich") String luotThich, @Field("idBaiHat") String idBaiHat);
+
 
     @GET("danhsachcacplaylist.php")
     Call<List<Playlist>> GetDanhsachcacPlaylist();
@@ -65,5 +71,29 @@ public interface Dataservice {
     @FormUrlEncoded
     @POST("timkiembaihat.php")
     Call<List<Baihat>> GetTimkiembaihat(@Field("tukhoa") String tukhoa);
+
+    @FormUrlEncoded
+    @POST("login.php")
+    Call<String> getUserLogin( @Field("taiKhoan") String taiKhoan, @Field("matKhau") String matKhau);
+
+    @FormUrlEncoded
+    @POST("dangki.php")
+    Call<String> getUserRegi(
+            @Field("name") String name,
+            @Field("username") String uname,
+            @Field("password") String password
+    );
+
+    @FormUrlEncoded
+    @POST("chinhsua.php")
+    Call<String> getUserUpdate(
+            @Field("name") String name,
+            @Field("username") String uname,
+            @Field("password") String password
+    );
+
+    @FormUrlEncoded
+    @POST("myplaylist.php")
+    Call<List<Myplay>> GetDanhsachMypl(@Field("userpl") String userpl);
 
 }

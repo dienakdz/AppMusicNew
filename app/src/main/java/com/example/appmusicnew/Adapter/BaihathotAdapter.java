@@ -16,6 +16,7 @@ import com.example.appmusicnew.Model.Baihat;
 import com.example.appmusicnew.R;
 import com.example.appmusicnew.Service.APIService;
 import com.example.appmusicnew.Service.Dataservice;
+import com.example.appmusicnew.Service.PreferenceHelper;
 import com.squareup.picasso.Picasso;
 
 import org.jetbrains.annotations.NotNull;
@@ -29,6 +30,8 @@ import retrofit2.Response;
 public class BaihathotAdapter extends RecyclerView.Adapter<BaihathotAdapter.ViewHolder>{
     Context context;
     ArrayList<Baihat> baihatArrayList;
+    private PreferenceHelper preferenceHelper;
+
 
     public BaihathotAdapter(Context context, ArrayList<Baihat> baihatArrayList) {
         this.context = context;
@@ -81,26 +84,51 @@ public class BaihathotAdapter extends RecyclerView.Adapter<BaihathotAdapter.View
             imgluotthich.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    preferenceHelper = new PreferenceHelper(view.getContext());
                     imgluotthich.setImageResource(R.drawable.iconloved);
                     Dataservice dataservice = APIService.getService();
-                    Call<String> callback= dataservice.UpdateLuotthich("1",  baihatArrayList.get(getPosition()).getIdBaiHat());
-                    callback.enqueue(new Callback<String>() {
-                        @Override
-                        public void onResponse(Call<String> call, Response<String> response) {
-                            String ketqua = response.body();
-                            if (ketqua.equals("success")){
-                                Toast.makeText(context, " Đã thích", Toast.LENGTH_SHORT).show();
+                    if (preferenceHelper.getIsLogin()){
+                        Call<String> callback= dataservice.AddMyPlayList("1",  baihatArrayList.get(getPosition()).getIdBaiHat(), preferenceHelper.getName());
+                        callback.enqueue(new Callback<String>() {
+                            @Override
+                            public void onResponse(Call<String> call, Response<String> response) {
+                                String ketqua = response.body();
+                                System.out.println("ketquabne: "+ ketqua);
+                                if (ketqua.equals("successsuccessadd")){
+                                    Toast.makeText(context, " Đã thích0", Toast.LENGTH_SHORT).show();
 
-                            }else{
-                                Toast.makeText(context, "Lỗi!", Toast.LENGTH_SHORT).show();
+                                }else{
+                                    Toast.makeText(context, "Lỗi0!", Toast.LENGTH_SHORT).show();
+                                }
                             }
-                        }
 
-                        @Override
-                        public void onFailure(Call<String> call, Throwable t) {
+                            @Override
+                            public void onFailure(Call<String> call, Throwable t) {
 
-                        }
-                    });
+                            }
+                        });
+                    }else {
+                        Call<String> callback= dataservice.UpdateLuotthich("1",  baihatArrayList.get(getPosition()).getIdBaiHat());
+                        callback.enqueue(new Callback<String>() {
+                            @Override
+                            public void onResponse(Call<String> call, Response<String> response) {
+                                String ketqua = response.body();
+                                System.out.println("ketquabne: "+ ketqua);
+                                if (ketqua.equals("success")){
+                                    Toast.makeText(context, " Đã thích1", Toast.LENGTH_SHORT).show();
+
+                                }else{
+                                    Toast.makeText(context, "Lỗi1!", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+
+                            @Override
+                            public void onFailure(Call<String> call, Throwable t) {
+
+                            }
+                        });
+                    }
+
                 }
             });
 

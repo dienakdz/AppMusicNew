@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.PlaynhacActivity"></activity>
+        <activity android:name=".Activity.WelcomeActivity"></activity>
+        <activity android:name=".Activity.DangkiActivity" />
+        <activity android:name=".Activity.PlaynhacActivity" />
         <activity android:name=".Activity.DanhsachalbumActivity" />
         <activity android:name=".Activity.DanhsachcactheloaiActivity" />
         <activity android:name=".Activity.DanhsachcacplaylistActivity" />

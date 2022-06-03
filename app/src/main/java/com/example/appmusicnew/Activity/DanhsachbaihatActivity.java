@@ -234,7 +234,7 @@ public class DanhsachbaihatActivity extends AppCompatActivity {
                 Intent intent = new Intent(DanhsachbaihatActivity.this, PlaynhacActivity.class);
                 intent.putExtra("cacbaihat", mangbaihat);
                 startActivity(intent);
-                System.out.println(intent.putExtra("cacbaihat", mangbaihat));
+//                System.out.println(intent.putExtra("cacbaihat", mangbaihat));
             }
         });
 
