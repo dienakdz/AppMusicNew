@@ -21,12 +21,14 @@ public class WelcomeActivity extends AppCompatActivity {
     private Button btnlogout,btnedit, btnhome;
     private PreferenceHelper preferenceHelper;
     private ViewPager welviewPager;
+    private int checkclick =1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
         anhxa();
+
 
 
 
@@ -64,10 +66,14 @@ public class WelcomeActivity extends AppCompatActivity {
                 init();
             }
         });
+        if (checkclick==1){
+            MainViewPagerAdapter mainViewPagerAdapter = new MainViewPagerAdapter(getSupportFragmentManager());
+            mainViewPagerAdapter.addFragment(new Fragment_MyPlayList(), "MyPlaylist");
+            welviewPager.setAdapter(mainViewPagerAdapter);
+        }else{
 
-        MainViewPagerAdapter mainViewPagerAdapter = new MainViewPagerAdapter(getSupportFragmentManager());
-        mainViewPagerAdapter.addFragment(new Fragment_MyPlayList(), "MyPlaylist");
-        welviewPager.setAdapter(mainViewPagerAdapter);
+        }
+
     }
 
     private void anhxa() {
@@ -81,6 +87,7 @@ public class WelcomeActivity extends AppCompatActivity {
     }
 
     private void init() {
+        checkclick = 0;
         MainViewPagerAdapter mainViewPagerAdapter = new MainViewPagerAdapter(getSupportFragmentManager());
         mainViewPagerAdapter.addFragment(new Fragment_Chinhsua(), "Chỉnh sửa");
         welviewPager.setAdapter(mainViewPagerAdapter);
