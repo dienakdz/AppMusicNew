@@ -1,6 +1,8 @@
 package com.example.appmusicnew.Activity;
 
 import android.content.Intent;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,13 +17,15 @@ import com.example.appmusicnew.Fragment.Fragment_MyPlayList;
 import com.example.appmusicnew.R;
 import com.example.appmusicnew.Service.PreferenceHelper;
 
+import static java.lang.Thread.sleep;
+
 public class WelcomeActivity extends AppCompatActivity {
 
     private TextView tvname, tvtaikhoan;
-    private Button btnlogout,btnedit, btnhome;
+    private Button btnlogout,btnedit, btnhome,btnmpl;
     private PreferenceHelper preferenceHelper;
     private ViewPager welviewPager;
-    private int checkclick =1;
+    private TabLayout tabLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,19 +64,21 @@ public class WelcomeActivity extends AppCompatActivity {
                 WelcomeActivity.this.finish();
             }
         });
-        btnedit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                init();
-            }
-        });
-        if (checkclick==1){
-            MainViewPagerAdapter mainViewPagerAdapter = new MainViewPagerAdapter(getSupportFragmentManager());
-            mainViewPagerAdapter.addFragment(new Fragment_MyPlayList(), "MyPlaylist");
-            welviewPager.setAdapter(mainViewPagerAdapter);
-        }else{
 
-        }
+        init();
+
+//        btnedit.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                    init();
+//            }
+//        });
+//        btnmpl.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//            }
+//        });
 
     }
 
@@ -80,16 +86,22 @@ public class WelcomeActivity extends AppCompatActivity {
         tvname = (TextView) findViewById(R.id.textviewtennguoidung);
         tvtaikhoan = findViewById(R.id.textviewtknguoidung);
         btnlogout = (Button) findViewById(R.id.btndx);
-        btnedit = (Button) findViewById(R.id.btnedit);
+//        btnedit = (Button) findViewById(R.id.btnedit);
         btnhome = findViewById(R.id.btnhome);
 
         welviewPager = findViewById(R.id.welViewPager);
+        tabLayout = findViewById(R.id.mplTabLayout);
     }
 
     private void init() {
-        checkclick = 0;
-        MainViewPagerAdapter mainViewPagerAdapter = new MainViewPagerAdapter(getSupportFragmentManager());
-        mainViewPagerAdapter.addFragment(new Fragment_Chinhsua(), "Chỉnh sửa");
-        welviewPager.setAdapter(mainViewPagerAdapter);
+        MainViewPagerAdapter welViewPagerAdapter = new MainViewPagerAdapter(getSupportFragmentManager());
+        welViewPagerAdapter.addFragment(new Fragment_MyPlayList(), "MyPlaylist");
+        welViewPagerAdapter.addFragment(new Fragment_Chinhsua(), "Chỉnh sửa");
+        welviewPager.setAdapter(welViewPagerAdapter);
+        welviewPager.setAdapter(welViewPagerAdapter);
+        tabLayout.setupWithViewPager(welviewPager);
+        tabLayout.getTabAt(0);
+        tabLayout.getTabAt(1);
     }
+
 }

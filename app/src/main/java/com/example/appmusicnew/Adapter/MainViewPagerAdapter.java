@@ -5,6 +5,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+import com.example.appmusicnew.Fragment.Fragment_MyPlayList;
+
 import java.util.ArrayList;
 
 public class MainViewPagerAdapter extends FragmentPagerAdapter {
@@ -24,10 +26,17 @@ public class MainViewPagerAdapter extends FragmentPagerAdapter {
         return arrayFragment.size();
     }
 
+    public int getCountmpl() {
+        return arrayFragment.size()-1;
+    }
+
     public void addFragment(Fragment fragment, String title){
+
         arrayFragment.add(fragment);
         arraytitle.add(title);
+
     }
+
 
     @Nullable
     @Override

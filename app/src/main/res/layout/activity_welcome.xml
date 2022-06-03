@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
     <RelativeLayout
         android:layout_marginTop="20dp"
@@ -50,7 +51,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="0dp"
         android:orientation="horizontal">
         <Button
             android:id="@+id/btnhome"
@@ -60,14 +61,7 @@
             android:layout_marginRight="5dp"
             android:layout_weight="1"
             android:text="Trang Chủ" />
-        <Button
-            android:id="@+id/btnedit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:layout_weight="1"
-            android:text="CHỈNH SỬA" />
+
 
         <Button
             android:id="@+id/btndx"
@@ -78,12 +72,20 @@
             android:layout_weight="1"
             android:text="ĐĂNG XUẤT" />
 
-
-
-
-
     </LinearLayout>
 
+    <android.support.design.widget.TabLayout
+        android:minHeight="55dp"
+        android:id="@+id/mplTabLayout"
+        app:tabIndicatorColor="#9C27B0"
+        app:tabMode="fixed"
+        app:tabSelectedTextColor="#9C27B0"
+        app:tabTextColor="#131313"
+        app:tabIndicatorHeight="2dp"
+        android:background="@android:color/transparent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </android.support.design.widget.TabLayout>
 
     <android.support.v4.view.ViewPager
         android:id="@+id/welViewPager"
@@ -97,6 +99,7 @@
             android:layout_height="wrap_content">
 
         </fragment>
+
         <fragment
             android:id="@+id/fragment_chinhsua"
             android:name="com.example.appmusicnew.Fragment.Fragment_Chinhsua"
