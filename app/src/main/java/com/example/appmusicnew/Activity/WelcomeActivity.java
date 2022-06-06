@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,6 +27,7 @@ public class WelcomeActivity extends AppCompatActivity {
     private PreferenceHelper preferenceHelper;
     private ViewPager welviewPager;
     private TabLayout tabLayout;
+    private ImageView imgrecycle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,20 +67,11 @@ public class WelcomeActivity extends AppCompatActivity {
             }
         });
 
+
+
         init();
 
-//        btnedit.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                    init();
-//            }
-//        });
-//        btnmpl.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//            }
-//        });
+
 
     }
 
@@ -86,8 +79,8 @@ public class WelcomeActivity extends AppCompatActivity {
         tvname = (TextView) findViewById(R.id.textviewtennguoidung);
         tvtaikhoan = findViewById(R.id.textviewtknguoidung);
         btnlogout = (Button) findViewById(R.id.btndx);
-//        btnedit = (Button) findViewById(R.id.btnedit);
         btnhome = findViewById(R.id.btnhome);
+        imgrecycle = findViewById(R.id.imageviewmyplaylistdelete);
 
         welviewPager = findViewById(R.id.welViewPager);
         tabLayout = findViewById(R.id.mplTabLayout);

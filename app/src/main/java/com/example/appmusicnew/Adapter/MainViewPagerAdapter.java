@@ -26,9 +26,6 @@ public class MainViewPagerAdapter extends FragmentPagerAdapter {
         return arrayFragment.size();
     }
 
-    public int getCountmpl() {
-        return arrayFragment.size()-1;
-    }
 
     public void addFragment(Fragment fragment, String title){
 

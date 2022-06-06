@@ -96,4 +96,8 @@ public interface Dataservice {
     @POST("myplaylist.php")
     Call<List<Myplay>> GetDanhsachMypl(@Field("userpl") String userpl);
 
+    @FormUrlEncoded
+    @POST("updateluotthich.php")
+    Call<String> Deletempl (@Field("userdelete") String userdelete, @Field("idBaiHatDelete") String idBaiHatDelete);
+
 }

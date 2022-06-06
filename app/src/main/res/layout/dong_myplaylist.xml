@@ -40,8 +40,8 @@
     </TextView>
     <ImageView
         android:layout_marginRight="10dp"
-        android:src="@drawable/iconlove"
-        android:id="@+id/imageviewmyplaylistluotthich"
+        android:src="@drawable/iconrecycle"
+        android:id="@+id/imageviewmyplaylistdelete"
         android:layout_centerVertical="true"
         android:layout_alignParentRight="true"
         android:layout_width="30dp"

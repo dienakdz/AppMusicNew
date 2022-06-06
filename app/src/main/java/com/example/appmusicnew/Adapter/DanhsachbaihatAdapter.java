@@ -16,6 +16,7 @@ import com.example.appmusicnew.Model.Baihat;
 import com.example.appmusicnew.R;
 import com.example.appmusicnew.Service.APIService;
 import com.example.appmusicnew.Service.Dataservice;
+import com.example.appmusicnew.Service.PreferenceHelper;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -29,6 +30,7 @@ public class DanhsachbaihatAdapter extends RecyclerView.Adapter<DanhsachbaihatAd
 
     Context context;
     ArrayList<Baihat> mangbaihat;
+    private PreferenceHelper preferenceHelper;
 
     public DanhsachbaihatAdapter(Context context, ArrayList<Baihat> mangbaihat) {
         this.context = context;
@@ -72,26 +74,50 @@ public class DanhsachbaihatAdapter extends RecyclerView.Adapter<DanhsachbaihatAd
             imgluotthich.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    preferenceHelper = new PreferenceHelper(view.getContext());
                     imgluotthich.setImageResource(R.drawable.iconloved);
                     Dataservice dataservice = APIService.getService();
-                    Call<String> callback= dataservice.UpdateLuotthich("1",  mangbaihat.get(getPosition()).getIdBaiHat());
-                    callback.enqueue(new Callback<String>() {
-                        @Override
-                        public void onResponse(Call<String> call, Response<String> response) {
-                            String ketqua = response.body();
-                            if (ketqua.equals("success")){
-                                Toast.makeText(context, " Đã thích", Toast.LENGTH_SHORT).show();
+                    if (preferenceHelper.getIsLogin()){
+                        Call<String> callback= dataservice.AddMyPlayList("1",  mangbaihat.get(getPosition()).getIdBaiHat(), preferenceHelper.getName());
+                        callback.enqueue(new Callback<String>() {
+                            @Override
+                            public void onResponse(Call<String> call, Response<String> response) {
+                                String ketqua = response.body();
+                                System.out.println("ketquabne: "+ ketqua);
+                                if (ketqua.equals("successsuccessadd")){
+                                    Toast.makeText(context, " Đã thích0", Toast.LENGTH_SHORT).show();
 
-                            }else{
-                                Toast.makeText(context, "Lỗi!", Toast.LENGTH_SHORT).show();
+                                }else{
+                                    Toast.makeText(context, "Lỗi0!", Toast.LENGTH_SHORT).show();
+                                }
                             }
-                        }
 
-                        @Override
-                        public void onFailure(Call<String> call, Throwable t) {
+                            @Override
+                            public void onFailure(Call<String> call, Throwable t) {
 
-                        }
-                    });
+                            }
+                        });
+                    }else {
+                        Call<String> callback= dataservice.UpdateLuotthich("1",  mangbaihat.get(getPosition()).getIdBaiHat());
+                        callback.enqueue(new Callback<String>() {
+                            @Override
+                            public void onResponse(Call<String> call, Response<String> response) {
+                                String ketqua = response.body();
+                                System.out.println("ketquabne: "+ ketqua);
+                                if (ketqua.equals("success")){
+                                    Toast.makeText(context, " Đã thích1", Toast.LENGTH_SHORT).show();
+
+                                }else{
+                                    Toast.makeText(context, "Lỗi1!", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+
+                            @Override
+                            public void onFailure(Call<String> call, Throwable t) {
+
+                            }
+                        });
+                    }
                 }
             });
             itemView.setOnClickListener(new View.OnClickListener() {
